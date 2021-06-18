@@ -1,4 +1,5 @@
 import json
+import matplotlib.pyplot as plt
 from elements import *
 
 
@@ -23,11 +24,11 @@ class FTA:
         ele_id = properties["id"]
         #Events
         if type == "BasicEvent":
-            prob = properties["prop"]["probability"]
-            element = BasicEvent(prob, ele_id, desc)
+            failure_rate = properties["prop"]["failure_rate"]
+            element = BasicEvent(failure_rate, ele_id, desc)
         elif type == "ExternalEvent":
-            prob = properties["prop"]["probability"]
-            element = ExternalEvent(prob, ele_id, desc)
+            failure_rate = properties["prop"]["failure_rate"]
+            element = ExternalEvent(failure_rate, ele_id, desc)
         #Gates
         elif type == "ANDGate":
             element = ANDGate(ele_id, desc)
@@ -44,3 +45,26 @@ class FTA:
             raise Exception(f"Nieznany typ elementu FTA: {type}")
 
         return element
+
+
+def run_fta(json_path, event_id, time):
+    try:
+        fta = FTA(json_path)
+    except BaseException:
+        print("Nie udało się załadować pliku JSON.")
+        return
+
+    event = fta.map[event_id]
+
+    ts = [i / 1000 for i in range(time*1000)]
+    ps = [event.get_probability(t) for t in ts]
+
+    plt.plot(ts, ps)
+    plt.title(f"Prawdopodobieństwo zaistnienia zdarzenia: {event_id}")
+    plt.grid()
+    plt.xlabel("Czas")
+    plt.ylabel("Prawdopodobieństwo")
+    plt.xlim(0, time)
+    plt.ylim(0, 1)
+    plt.tight_layout()
+    plt.show()

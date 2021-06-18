@@ -3,7 +3,7 @@
     "id": "TopEvent",
     "desc": "To jest TopEvent",
     "prop": {
-      "probability": 1
+      "failure_rate": 100
     },
     "subelements": [
       {
@@ -11,24 +11,25 @@
           "id": "G1",
           "desc": "egg",
           "prop": {
-            "k":  2},
+            "k": 2
+          },
           "subelements": [
             {
               "BasicEvent": {
                 "id": "A1",
                 "desc": "egg",
                 "prop": {
-                  "probability": 0.5
+                  "failure_rate": 0.1
                 },
                 "subelements": []
               }
             },
-                        {
+            {
               "BasicEvent": {
                 "id": "A2",
                 "desc": "egg",
                 "prop": {
-                  "probability": 0.5
+                  "failure_rate": 0.1
                 },
                 "subelements": [
                   {
@@ -38,25 +39,25 @@
                       "prop": {
                         "k": 2
                       },
-                        "subelements": [
-                                      {
-                            "ExternalEvent": {
-                              "id": "A12",
-                              "desc": "egg",
-                              "prop": {
-                                "probability": 0.7
-                              },
-                              "subelements": []
-                            }
-                          },
-                          {
-                            "ExternalEvent": {
-                              "id": "A13",
-                              "desc": "egg",
-                              "prop": {
-                                "probability": 0.3
-                              },
-                              "subelements": []
+                      "subelements": [
+                        {
+                          "ExternalEvent": {
+                            "id": "A12",
+                            "desc": "egg",
+                            "prop": {
+                              "failure_rate": 50
+                            },
+                            "subelements": []
+                          }
+                        },
+                        {
+                          "ExternalEvent": {
+                            "id": "A13",
+                            "desc": "egg",
+                            "prop": {
+                              "failure_rate": 0.3
+                            },
+                            "subelements": []
                           }
                         }
                       ]
@@ -70,7 +71,7 @@
                 "id": "A3",
                 "desc": "egg",
                 "prop": {
-                  "probability": 0.5
+                  "failure_rate": 0.5
                 },
                 "subelements": []
               }

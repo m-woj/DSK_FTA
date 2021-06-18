@@ -8,11 +8,11 @@ class KNGate(Gate):
         super().__init__(*args, **kwargs)
         self.k = k
 
-    def get_probability(self):
+    def get_probability(self, t):
         n = len(self.subelements)
         ele_prob = []
         for ele in self.subelements:
-            ele_prob.append(ele.get_probability())
+            ele_prob.append(ele.get_probability(t))
 
         prob = 0
         for k in range(self.k, n + 1):

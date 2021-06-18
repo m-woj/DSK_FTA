@@ -12,7 +12,7 @@ class Element(ABC):
         pass
 
     @abstractmethod
-    def get_probability(self):
+    def get_probability(self, t):
         pass
 
     def get_description(self):
