@@ -1,49 +1,39 @@
-import json
-from elements import *
+from FTA import FTA
 
 
-class FTA:
-    def __init__(self, path_to_json):
-        fta_dict = json.load(path_to_json)
-        self.tree = self.create_tree(fta_dict)
-
-    def create_tree(self, fta_dict):
-        fta_dict = {}
-        top = fta_dict.keys()[0]
-
-    def make_element(self, type, properties):
-        desc = properties["desc"]
-        ele_id = properties["id"]
-        if type == "BasicEvent":
-            prob = properties["prop"]["probability"]
-            element = BasicEvent(prob, ele_id, desc)
-        elif type == "ANDGate":
-            element = ANDGate(ele_id, desc)
-        else:
-            raise Exception(f"Nieznany typ elementu FTA: {type}")
-
-        return element
-
-
-if __name__ == "__main__":
+def gen_json():
     e0 = {"BasicEvent": {"id": "A1",
                          "desc": "egg",
-                         "prop": {"probability": 0.3,
+                         "prop": {
+                             "probability": 0.3,
                                   },
-                         "subelements": ""}
+                         "subelements": []}
              }
 
     g1 = {"ANDGate": {"id": "G1",
                          "desc": "egg",
-                         "prop": "",
-                         "subelements": ""}
+                         "prop": {},
+                         "subelements": [e0]}
              }
 
-    e1 = {"BasicEvent": {"id": "A1",
+    e1 = {"BasicEvent": {"id": "A2",
                          "desc": "egg",
-                         "prop": "",
-                         "subelements": g1}
+                         "prop": {
+                             "probability": 0.3,
+                         },
+                         "subelements": [g1]}
              }
+
+    with open("sample.json", "w") as outfile:
+        json.dump(e1, outfile, indent=2)
+
+
+if __name__ == "__main__":
+    # gen_json()
+    fta = FTA("my_sample.json")
+    top_event = fta.map["TopEvent"]
+    print(top_event.get_probability())
+    print(top_event.get_description())
 
     # top_event = BasicEvent(1, "Top Event", "egg")
     # gate1 = KNGate(0, "E1", "egg")

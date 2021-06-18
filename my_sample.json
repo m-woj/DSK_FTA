@@ -1,0 +1,83 @@
+{
+  "BasicEvent": {
+    "id": "TopEvent",
+    "desc": "To jest TopEvent",
+    "prop": {
+      "probability": 1
+    },
+    "subelements": [
+      {
+        "KNGate": {
+          "id": "G1",
+          "desc": "egg",
+          "prop": {
+            "k":  2},
+          "subelements": [
+            {
+              "BasicEvent": {
+                "id": "A1",
+                "desc": "egg",
+                "prop": {
+                  "probability": 0.5
+                },
+                "subelements": []
+              }
+            },
+                        {
+              "BasicEvent": {
+                "id": "A2",
+                "desc": "egg",
+                "prop": {
+                  "probability": 0.5
+                },
+                "subelements": [
+                  {
+                    "ORGate": {
+                      "id": "G1",
+                      "desc": "egg",
+                      "prop": {
+                        "k": 2
+                      },
+                        "subelements": [
+                                      {
+                            "ExternalEvent": {
+                              "id": "A12",
+                              "desc": "egg",
+                              "prop": {
+                                "probability": 0.7
+                              },
+                              "subelements": []
+                            }
+                          },
+                          {
+                            "ExternalEvent": {
+                              "id": "A13",
+                              "desc": "egg",
+                              "prop": {
+                                "probability": 0.3
+                              },
+                              "subelements": []
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "BasicEvent": {
+                "id": "A3",
+                "desc": "egg",
+                "prop": {
+                  "probability": 0.5
+                },
+                "subelements": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
