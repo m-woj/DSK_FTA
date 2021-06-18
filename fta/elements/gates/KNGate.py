@@ -25,12 +25,12 @@ class KNGate(Gate):
         probability = 0
 
         for fails_case_prob in fails:
-            good_cases = self.get_good_cases(elements_prob, fails_case_prob)
+            good_cases = self._get_good_cases(elements_prob, fails_case_prob)
             probability += self._calc_case(good_cases, fails_case_prob)
         return probability
 
     @staticmethod
-    def get_good_cases(elements, fails):
+    def _get_good_cases(elements, fails):
         well_elements = copy.deepcopy(elements)
         for fail in fails:
             well_elements.remove(fail)

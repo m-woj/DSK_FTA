@@ -8,10 +8,10 @@
     "subelements": [
       {
         "KNGate": {
-          "id": "G1",
+          "id": "GG1",
           "desc": "egg",
           "prop": {
-            "k": 2
+            "k": 1
           },
           "subelements": [
             {
@@ -37,7 +37,6 @@
                       "id": "G1",
                       "desc": "egg",
                       "prop": {
-                        "k": 2
                       },
                       "subelements": [
                         {
@@ -45,7 +44,7 @@
                             "id": "A12",
                             "desc": "egg",
                             "prop": {
-                              "failure_rate": 50
+                              "failure_rate": 0.3
                             },
                             "subelements": []
                           }
@@ -71,7 +70,7 @@
                 "id": "A3",
                 "desc": "egg",
                 "prop": {
-                  "failure_rate": 0.5
+                  "failure_rate": 0.05
                 },
                 "subelements": []
               }

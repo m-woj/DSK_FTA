@@ -1,4 +1,4 @@
-from FTA import run_fta
+from fta import run_fta
 
 
 if __name__ == "__main__":
