@@ -1,0 +1,1 @@
+{"id":"EventFirst","type":"BasicEvent","failure_rate":0.5,"subelements":[{"id":"KNGate","failure_rate":0.2,"type":"KNGate","k":2,"subelements":[{"id":"node","failure_rate":0.2,"type":"BasicEvent","subelements":[]},{"failure_rate":0.2,"type":"BasicEvent","subelements":[]}]}]}

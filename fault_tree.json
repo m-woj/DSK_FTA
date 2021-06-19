@@ -1,26 +1,20 @@
 {
-  "BasicEvent": {
+    "type": "BasicEvent",
     "id": "TopEvent",
     "desc": "To jest TopEvent",
-    "prop": {
-      "failure_rate": 100
-    },
+    "failure_rate": 100,
     "subelements": [
-      {
-        "KNGate": {
+        {
+          "type": "KNGate",
           "id": "GG1",
           "desc": "egg",
-          "prop": {
-            "k": 1
-          },
+          "k": 2,
           "subelements": [
-            {
-              "BasicEvent": {
+              {
+                "type": "BasicEvent",
                 "id": "A1",
                 "desc": "egg",
-                "prop": {
-                  "failure_rate": 0.1
-                },
+                "failure_rate": 0.5,
                 "subelements": []
               }
             },
@@ -28,24 +22,18 @@
               "BasicEvent": {
                 "id": "A2",
                 "desc": "egg",
-                "prop": {
-                  "failure_rate": 0.1
-                },
+                "failure_rate": 0.05,
                 "subelements": [
                   {
                     "ORGate": {
                       "id": "G1",
                       "desc": "egg",
-                      "prop": {
-                      },
                       "subelements": [
                         {
                           "ExternalEvent": {
                             "id": "A12",
                             "desc": "egg",
-                            "prop": {
-                              "failure_rate": 0.3
-                            },
+                            "failure_rate": 0.05,
                             "subelements": []
                           }
                         },
@@ -53,9 +41,7 @@
                           "ExternalEvent": {
                             "id": "A13",
                             "desc": "egg",
-                            "prop": {
-                              "failure_rate": 0.3
-                            },
+                            "failure_rate": 0.05,
                             "subelements": []
                           }
                         }
@@ -69,15 +55,11 @@
               "BasicEvent": {
                 "id": "A3",
                 "desc": "egg",
-                "prop": {
-                  "failure_rate": 0.05
-                },
+                "failure_rate": 0.5,
                 "subelements": []
               }
             }
           ]
         }
-      }
     ]
   }
-}

@@ -2,16 +2,20 @@ import matplotlib.pyplot as plt
 from .FTA import FTA
 
 
-def run_fta(json_path, event_id, time):
+def _load_fta(json_path):
     try:
-        fta = FTA(json_path)
-    except BaseException:
-        print("Nie udało się załadować pliku JSON.")
+        return FTA(json_path)
+    except BaseException as e:
+        print(f"Nie udało się załadować pliku JSON.\n{e}")
+
+
+def draw_fta(json_path, event_id, time):
+    fta = _load_fta(json_path)
+    if not fta:
         return
 
     event = fta.map[event_id]
-
-    ts = [i / 1000 for i in range(time*1000)]
+    ts = [i * 0.001 for i in range(time*1000)]
     ps = [event.get_probability(t) for t in ts]
 
     plt.plot(ts, ps)

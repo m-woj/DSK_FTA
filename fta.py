@@ -1,9 +1,9 @@
-from fta import run_fta
+from fta import draw_fta
 
 
 if __name__ == "__main__":
-    JSON_PATH = "my_sample.json"
-    EVENT_ID = "TopEvent"
+    JSON_PATH = "sampleJson.json"
+    EVENT_ID = "EventFirst"
     TIME = 10
 
-    run_fta(JSON_PATH, EVENT_ID, TIME)
+    draw_fta(JSON_PATH, EVENT_ID, TIME)

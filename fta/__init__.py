@@ -1,1 +1,1 @@
-from .utils import run_fta
+from .utils import draw_fta
