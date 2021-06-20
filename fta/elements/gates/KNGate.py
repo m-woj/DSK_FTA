@@ -31,10 +31,10 @@ class KNGate(Gate):
 
     @staticmethod
     def _get_good_cases(elements, fails):
-        well_elements = copy.deepcopy(elements)
+        good_elements = copy.deepcopy(elements)
         for fail in fails:
-            well_elements.remove(fail)
-        return well_elements
+            good_elements.remove(fail)
+        return good_elements
 
     @staticmethod
     def _calc_case(well, fails):
