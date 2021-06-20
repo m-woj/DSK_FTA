@@ -1,0 +1,99 @@
+
+	{
+		"id": "TopEvent",
+		"type": "BasicEvent",
+		"failure_rate": 100,
+		"subelements": [
+			{
+				"id": "KNGate",
+				"type": "KNGate",
+				"k": 2,
+				"subelements": [
+					{
+						"id": "Wydarzenie1",
+						"failure_rate": 0.2,
+						"type": "BasicEvent",
+						"subelements": []
+					},
+					{
+						"id": "Wydarzenie2",
+						"failure_rate": 0.1,
+						"type": "BasicEvent",
+						"subelements": [
+							{
+								"id": "ANDGate",
+								"type": "ANDGate",
+								"k": 2,
+								"subelements": [
+									{
+										"id": "Wydarzenie21",
+										"failure_rate": 0.6,
+										"type": "BasicEvent",
+										"subelements": []
+									},
+									{
+										"id": "Wydarzenie22",
+										"failure_rate": 0.1,
+										"type": "ExternalEvent",
+										"subelements": []
+									}
+								]
+							}
+						]
+					},
+					{
+						"id": "Wydarzenie3",
+						"failure_rate": 0.2,
+						"type": "BasicEvent",
+						"subelements": []
+					},
+					{
+						"id": "Wydarzenie4",
+						"failure_rate": 0.1,
+						"type": "BasicEvent",
+						"subelements": [
+							{
+								"id": "NORGate",
+								"type": "NORGate",
+								"k": 2,
+								"subelements": [
+									{
+										"id": "Wydarzenie41",
+										"failure_rate": 2,
+										"type": "ExternalEvent",
+										"subelements": [
+											{
+												"id": "NANDGate",
+												"type": "NANDGate",
+												"k": 2,
+												"subelements": [
+													{
+														"id": "Wydarzenie411",
+														"failure_rate": 0.3,
+														"type": "BasicEvent",
+														"subelements": []
+													},
+													{
+														"id": "Wydarzenie412",
+														"failure_rate": 0.6,
+														"type": "ExternalEvent",
+														"subelements": []
+													}
+												]
+											}
+										]
+									},
+									{
+										"id": "Wydarzenie42",
+										"failure_rate": 0.01,
+										"type": "BasicEvent",
+										"subelements": []
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}

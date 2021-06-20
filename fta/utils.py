@@ -6,7 +6,7 @@ def _load_fta(json_path):
     try:
         return FTA(json_path)
     except BaseException as e:
-        print(f"Nie udało się załadować pliku JSON.\n{e}")
+        print(f"Nie udało się załadować pliku \"{json_path}\".\n{e}")
 
 
 def draw_fta(json_path, event_id, time):

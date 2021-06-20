@@ -27,10 +27,10 @@ class FTA:
 
         #Events
         if type == BASIC_EVENT:
-            failure_rate = properties[FAILURE_RATE]
+            failure_rate = float(properties[FAILURE_RATE])
             element = BasicEvent(failure_rate, ele_id, desc)
         elif type == EXTERNAL_EVENT:
-            failure_rate = properties[FAILURE_RATE]
+            failure_rate = float(properties[FAILURE_RATE])
             element = ExternalEvent(failure_rate, ele_id, desc)
         #Gates
         elif type == AND_GATE:
